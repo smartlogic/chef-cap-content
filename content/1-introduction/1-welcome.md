@@ -10,10 +10,18 @@ used to provision a server and deploy a basic Ruby on Rails application.
 ## Who is this for?
 
 This is intended for anyone who wants to learn more about provisioning and 
-deploying web based applications. It is based on how the process works at 
-[SmartLogic Solutions](http://smartlogicsolutions.com/).
+deploying web based applications. You might want to learn about deploying Rails 
+applications and know nothing about Chef or Capistrano.  You might want to learn 
+about Chef or Capistrano and know nothing about Rails applications. Maybe you 
+are an expert in all of those things but are curious about how others use them 
+all together. If you are curious about any of these things, this guide could be 
+for you.
 
-TODO Expand
+This guide is one path towards automatic, managed, and repeatable server setup 
+and application deployment for Rails applications with Chef and Capistrano. It 
+is based on how the process works at [SmartLogic Solutions](http://smartlogicsolutions.com/).
+There are many other approaches, and it is best to find and tailor one that 
+works for you. Hopefully this can be a solid starting place for you.
 
 ## What should you know?
 
