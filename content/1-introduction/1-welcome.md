@@ -2,8 +2,15 @@
 
 ## Hello World
 
-This is a companion to the GitHub repository 
-[https://github.com/smartlogic/chef-cap](https://github.com/smartlogic/chef-cap). 
+This guide is one path towards automatic, managed, and repeatable server setup 
+and application deployment for Rails applications with Chef and Capistrano. It 
+is based on how the process works at [SmartLogic 
+Solutions](http://smartlogicsolutions.com/).
+There are many other approaches, and it is best to find and tailor one that 
+works for you. Hopefully this can be a solid starting place for you.
+
+There is a companion GitHub repository 
+[https://github.com/smartlogic/chef-cap](https://github.com/smartlogic/chef-cap).  
 This guide will walk through the various aspects of the repository and how it is 
 used to provision a server and deploy a basic Ruby on Rails application.
 
@@ -16,12 +23,6 @@ about Chef or Capistrano and know nothing about Rails applications. Maybe you
 are an expert in all of those things but are curious about how others use them 
 all together. If you are curious about any of these things, this guide could be 
 for you.
-
-This guide is one path towards automatic, managed, and repeatable server setup 
-and application deployment for Rails applications with Chef and Capistrano. It 
-is based on how the process works at [SmartLogic Solutions](http://smartlogicsolutions.com/).
-There are many other approaches, and it is best to find and tailor one that 
-works for you. Hopefully this can be a solid starting place for you.
 
 ## What should you know?
 
@@ -38,7 +39,7 @@ For the code examples to run on your machine you will need:
 1.  The examples assume a *nix terminal. Windows might work, but you are on your 
 own.
 1.  [Ruby](http://www.ruby-lang.org/en/) >= 1.9.3 suggested
-1.  Be able to install additional gems
+1.  The ability to install additional gems
 1.  [Bundler](http://gembundler.com/)
 1.  [VirtualBox](https://www.virtualbox.org/)
 1.  [Vagrant](http://www.vagrantup.com/)

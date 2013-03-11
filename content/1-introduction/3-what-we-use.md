@@ -18,7 +18,7 @@ TODO expand
 
 ## Why Both?
 
-You could argue that everything could be done in one of these two tools. You 
+You could argue that everything could be done with one of these two tools. You 
 wouldn't be wrong or misled in your argument. but this what we’ve settled on 
 uses each for what it is best at.
 
@@ -36,4 +36,5 @@ more frequent as the application changes or evolves and are stored right
 alongside the application code.
 
 Note: In the example repository for this guide, the Chef code is right alongside 
-the application, but this is for convenience and is not how we often do things.
+the application, but this is for convenience in this guide and is not how we 
+often do things, opting to put the Chef code in its own repository.
