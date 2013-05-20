@@ -35,16 +35,22 @@ task :pandoc => :setup do
   epub_file = File.join(base_dir, 'output', "#{book_filename}.epub")
   html_file = File.join(base_dir, 'output', "#{book_filename}.html")
   odt_file = File.join(base_dir, 'output', "#{book_filename}.odt")
+  pdf_file = File.join(base_dir, 'output', "#{book_filename}.pdf")
 
   common_settings = "--data-dir=#{base_dir} -S"
 
   epub_settings = "-o #{epub_file} --epub-stylesheet=style/common.css --epub-stylesheet=style/epub.css"
   html_settings = "-o #{html_file} --self-contained -t html5 --css=style/common.css --css=style/html.css"
+  pdf_settings = "-o #{pdf_file} --self-contained --css=style/common.css --css=style/html.css"
   odt_settings = "-o #{odt_file} --self-contained -t odt"
 
   file_string = files.join(' ')
 
   formats = [epub_settings, html_settings, odt_settings]
+
+  if `which pdflatex`.length > 0
+    formats << pdf_settings
+  end
 
   formats.each do |settings|
     `pandoc #{common_settings} #{settings} #{file_string}`
@@ -53,21 +59,6 @@ task :pandoc => :setup do
 end
 
 task :default => :pandoc
-
-desc 'make a pdf from the html'
-task :pdf do
-  wkhtmltopdf_path = `which wkhtmltopdf`.chomp # check for dependency before trying to make pdf
-  raise 'wkhtmltopdf not installed. brew install wkhtmltopdf' if wkhtmltopdf_path.length == 0
-
-  html_file = File.join(base_dir, 'output', "#{book_filename}.html")
-  pdf_file = File.join(base_dir, 'output', "#{book_filename}.pdf")
-
-  Rake::Task["pandoc"].execute unless File.exists?(html_file)
-
-  puts "you may need to ctrl-c this, but it will still work"
-
-  `wkhtmltopdf #{html_file} #{pdf_file}`
-end
 
 desc 'check style'
 task :style do
